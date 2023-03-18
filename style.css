@@ -1,0 +1,134 @@
+@font-face {
+    font-family: calculator;
+    src: url(Calculator.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: rgb(133, 169, 205);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 600px;
+    width: 100vw;
+}
+
+.calcBody{
+    display: flex;
+    flex-flow: row wrap;
+
+    width: 300px;
+    background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    justify-content: space-evenly;
+}
+
+.display{
+    width: 280px;
+    height: 50px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: black;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.display > p {
+
+    font-family: calculator;
+    font-size: xx-large;
+    background-color: black;
+    color: rgb(54, 239, 13);
+
+}
+
+.clear,
+.delete {
+    width: 125px;
+    height: 50px;
+
+    border-radius: 25px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    background-color: black;
+    color: rgba(156,252,248,1);
+
+}
+
+.seven,
+.eight,
+.nine,
+.divison,
+.four,
+.five,
+.six,
+.multiply,
+.one,
+.two,
+.three,
+.subtract,
+.dot,
+.zero,
+.equals,
+.addition {
+    width: 55px;
+    height: 50px;
+    border-radius: 25px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.dot,
+.zero,
+.equals,
+.addition{
+    margin-bottom: 10px;
+}
+
+.divison,
+.addition,
+.multiply,
+.equals,
+.subtract {
+    background-color: rgba(156,252,248,1);
+}
+
+.zero,
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.dot{
+    background-color: rgba(110,123,251,1);
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer{
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    height: 10vh;
+}
