@@ -32,15 +32,15 @@ function operate(obj){
 function inputValues(value){
     if (equation.oper === ''){
         if (value === '.' && equation.num1.includes('.')){
-            output.textContent = 'NaN';
+            output.innerHTML = 'NaN';
         } else {
-            output.textContent = equation.num1 + value;
+            output.innerHTML = equation.num1 + value;
             equation.num1 = equation.num1 + value;}
     } else if (equation.oper !== ''){
         if (value === '.' && equation.num2.includes('.')){
-            output.textContent = 'NaN';
+            output.innerHTML = 'NaN';
         } else {
-            output.textContent = equation.num2 + value;
+            output.innerHTML = equation.num2 + value;
             equation.num2 = equation.num2 + value;}
     }
 }
@@ -50,24 +50,24 @@ function inputOperator(operator){
         equation.ans = operate(equation);
         clearObj(equation);
         equation.num1 = equation.ans;
-        output.textContent = operator;
+        output.innerHTML = operator;
         equation.oper = operator;
     } else {
         switch (operator){
             case '+':
-                output.textContent = '+';
+                output.innerHTML = '+';
                 equation.oper = '+';
                 break;
             case '-':
-                output.textContent = '-';
+                output.innerHTML = '-';
                 equation.oper = '-';
                 break;
             case '/':
-                output.textContent = '÷';
+                output.innerHTML = '÷';
                 equation.oper = '/';
                 break;
             case '*':
-                output.textContent = 'x';
+                output.innerHTML = 'x';
                 equation.oper = '*';
                 break;
         }
@@ -77,12 +77,12 @@ function inputOperator(operator){
     //functions for events
     function equalsEvent(){
         let answer = operate(equation);
-        output.textContent = ` = ${answer}`;
+        output.innerHTML = ` = ${answer}`;
         console.log(answer);
     }
 
     function clearAll(){
-        output.textContent = ''; 
+        output.innerHTML = ''; 
         equation.num1 = ''; 
         equation.num2 = ''; 
         equation.oper = ''; 
@@ -92,13 +92,13 @@ function inputOperator(operator){
     function deleteLast(){
         if (equation.num2 !== ''){
             equation.num2 = equation.num2.slice(0, -1);
-            output.textContent = equation.num2; 
+            output.innerHTML = equation.num2; 
         } else if (equation.oper !== ''){
             equation.oper = equation.oper.slice(0, -1);
-            output.textContent = equation.oper; 
+            output.innerHTML = equation.oper; 
         } else{
             equation.num1 = equation.num1.slice(0, -1);
-            output.textContent = equation.num1; 
+            output.innerHTML = equation.num1; 
         }
     }
 
